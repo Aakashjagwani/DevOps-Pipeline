@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: devOps1.example.Controller.Test.LoginServiceTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 7.02 sec <<< FAILURE! - in devOps1.example.Controller.Test.LoginServiceTest
+whenValidName_thenPersonShouldBeFound(devOps1.example.Controller.Test.LoginServiceTest)  Time elapsed: 0.031 sec  <<< ERROR!
+java.lang.NullPointerException: null
+	at devOps1.example.Controller.Test.LoginServiceTest.whenValidName_thenPersonShouldBeFound(LoginServiceTest.java:57)
+
