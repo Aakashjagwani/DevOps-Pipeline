@@ -1,8 +1,0 @@
--------------------------------------------------------------------------------
-Test set: devOps1.exampleTest.LoginServiceTest
--------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.316 sec <<< FAILURE! - in devOps1.exampleTest.LoginServiceTest
-whenValidName_thenEmployeeShouldBeFound(devOps1.exampleTest.LoginServiceTest)  Time elapsed: 0.031 sec  <<< ERROR!
-java.lang.NullPointerException: null
-	at devOps1.exampleTest.LoginServiceTest.whenValidName_thenEmployeeShouldBeFound(LoginServiceTest.java:51)
-

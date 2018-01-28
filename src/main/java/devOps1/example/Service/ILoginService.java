@@ -10,5 +10,7 @@ public interface ILoginService {
 
 	void addPerson(Login person);
 
-	List<Login> getAllPersons();	
+	List<Login> getAllPersons();
+	
+	String greeting();
 }

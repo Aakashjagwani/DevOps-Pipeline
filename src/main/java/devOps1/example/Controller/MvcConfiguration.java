@@ -12,8 +12,7 @@ import org.springframework.web.servlet.view.JstlView;
 @EnableWebMvc
 @ComponentScan
 public class MvcConfiguration extends WebMvcConfigurerAdapter{
-	 
-	    public void configureViewResolvers(ViewResolverRegistry registry) {
+	   public void configureViewResolvers(ViewResolverRegistry registry) {
 	        InternalResourceViewResolver resolver = new InternalResourceViewResolver();
 	        resolver.setPrefix("/");
 	        resolver.setSuffix(".jsp");

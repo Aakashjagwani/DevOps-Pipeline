@@ -24,4 +24,7 @@ public class LoginService implements ILoginService {
 	public void addPerson(Login person) {
 	        LoginDAO.addPerson(person);;
     }
+	public String greeting() {
+        return "Hello aakash";
+    }
 }

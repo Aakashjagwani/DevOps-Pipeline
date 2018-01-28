@@ -13,9 +13,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import devOps1.example.Service.ILoginService;
+import devOps1.example.Service.LoginService;
 import devOps1.example.VO.Login;
 
 @Controller
@@ -23,13 +24,23 @@ import devOps1.example.VO.Login;
 public class SpringController {
 	
 	@Autowired
-	private  ILoginService loginservice;
+	private  LoginService loginservice;
 	
-	@GetMapping("/hello")
+	@RequestMapping("/")
+    public @ResponseBody String greeting() {
+        return "Hello World";
+    }
+	
+	@GetMapping("hello")
     public String hello(Model model, @RequestParam(value="name", required=false, defaultValue="World") String name) {
         model.addAttribute("name", name);
         return "hello";
     }
+	@GetMapping("greeting")
+	public String greetPerson() {
+		return "Hello How are you";
+	}
+	
 	@RequestMapping(value="/login" , method = RequestMethod.GET)
 	public ModelAndView showLoginPage(){
         return new ModelAndView("login");
