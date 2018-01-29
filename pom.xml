@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>simpleApp</groupId>
   <artifactId>devOps1</artifactId>
-  <packaging>war</packaging>
+  <packaging>jar</packaging>
   <version>0.0.1-SNAPSHOT</version>
   <name>devOps1 Maven Webapp</name>
   <url>http://maven.apache.org</url>
@@ -91,6 +91,12 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
+            <plugin>
+			    <artifactId>maven-war-plugin</artifactId>
+			    <configuration>
+			      <attachClasses>true</attachClasses>
+			    </configuration>
+			</plugin>
         </plugins>
     <finalName>devOps1</finalName>
   </build>

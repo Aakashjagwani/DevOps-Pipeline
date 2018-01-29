@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: devOps1.example.MainAppTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.415 sec - in devOps1.example.MainAppTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 16.368 sec - in devOps1.example.MainAppTest
