@@ -6,24 +6,24 @@ node {
     
    }
    stage('Build Maven Image') {
-        docker.build("maven-build")
+        docker.build("devops1")
    }
    
    stage('Run Maven Container') {
        
-        //Remove maven-build-container if it exisits
-        sh " docker rm -f maven-build-container"
+        //Remove devops-container if it exisits
+        sh " docker rm -f devops1-container"
         
         //Run maven image
-        sh "docker run --rm --name maven-build-container maven-build"
+        sh "docker run --rm --name devops1-container devops1"
    }
    
    stage('Deploy Spring Boot Application') {
         
-         //Remove maven-build-container if it exisits
+         //Remove devops1-container if it exisits
         sh " docker rm -f java-deploy-container"
        
-        sh "docker run --name java-deploy-container --volumes-from maven-build-container -d -p 8080:8080 denisdbell/petclinic-deploy"
+        sh "docker run --name java-deploy-container --volumes-from devops1-container -d -p 8085:8085 aakash007/devops"
    }
 
 }

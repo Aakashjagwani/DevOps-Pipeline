@@ -7,8 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-
 Heelllooo Aakash
 </body>
 </html>

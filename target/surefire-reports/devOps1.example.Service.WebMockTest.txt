@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: devOps1.example.Service.WebMockTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.812 sec - in devOps1.example.Service.WebMockTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.244 sec - in devOps1.example.Service.WebMockTest
