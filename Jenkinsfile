@@ -11,7 +11,9 @@ pipeline {
 	           }
 	   }
 	   stage ('Build') {
-	    	sh 'mvn clean package -DskipTests=true'
+	   		steps{
+	   		sh 'mvn clean package -DskipTests=true'    
+	   		}
 	   }
 	   stage ('test') {
 	            steps { 
@@ -19,7 +21,9 @@ pipeline {
 	            }
 	   }
 	   stage('Build Docker Image') {
-	        s 'docker build -t aakash007/devops:latest .'
+	        steps{
+				sh 'docker build -t aakash007/devops:latest .'
+            }
 	   }
 	   stage('Run Docker Container') {
 	        sh "docker run -p 8072:8072  aakash007/devops"
