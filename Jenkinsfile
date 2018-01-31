@@ -25,11 +25,6 @@ pipeline {
 				sh 'docker build -t aakash007/devops:latest .'
             }
 	   }
-	   stage('Run Docker Container') {
-	       steps{ 
-	       sh "docker run -p 8072:8072  aakash007/devops"
-	   }
-	   }
 	   stage('Docker Push') {
        steps {
         withCredentials([usernamePassword(credentialsId: 'dockerHub', passwordVariable: 'enrique@5A', usernameVariable: 'aakash007')]) {
