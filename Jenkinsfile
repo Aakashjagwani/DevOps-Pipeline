@@ -1,6 +1,6 @@
 pipeline {
     agent any
-     
+    def app 
     tools {
         maven 'Maven' 
     }
@@ -27,9 +27,9 @@ pipeline {
 	   }
 	   stage('Docker Push') {
        steps {
-        withCredentials([usernamePassword(credentialsId: 'dockerHub', passwordVariable: 'enrique@5A', usernameVariable: 'aakash007')]) {
-          sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPassword}"
-          sh 'docker push aakash007/devops:latest'
+       docker.withRegistry('https://registry.hub.docker.com', 'dockerHub') {
+            app.push("${env.BUILD_NUMBER}")
+            app.push("latest")
         }
       }
 	}
