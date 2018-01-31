@@ -26,7 +26,9 @@ pipeline {
             }
 	   }
 	   stage('Run Docker Container') {
-	        sh "docker run -p 8072:8072  aakash007/devops"
+	       steps{ 
+	       sh "docker run -p 8072:8072  aakash007/devops"
+	   }
 	   }
 	   stage('Docker Push') {
        steps {
