@@ -1,6 +1,6 @@
 pipeline {
     agent any
-    def app 
+
     tools {
         maven 'Maven' 
     }
@@ -27,11 +27,11 @@ pipeline {
 	   }
 	   stage('Docker Push') {
        steps {
-       docker.withRegistry('https://registry.hub.docker.com', 'dockerHub') {
-            app.push("${env.BUILD_NUMBER}")
-            app.push("latest")
-        }
-      }
+   withCredentials([usernamePassword(credentialsId: 'dockerHub', passwordVariable: 'dockerHubPassword', usernameVariable: 'dockerHubUser')]) {
+          sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPassword}"
+          sh 'docker push shanem/spring-petclinic:latest'      
+          }	
 	}
-	}
+}
+}
 }
