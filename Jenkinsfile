@@ -35,7 +35,7 @@ pipeline {
 	   }
 	   stage('AWS Push'){
 		   steps{
-					sh "\$(aws ecr get-login)"
+					sh "aws ecr get-login"
  	    			sh "docker tag aakash007/devops:latest 299857441992.dkr.ecr.us-east-1.amazonaws.com/devops:latest"
     				sh "docker push 299857441992.dkr.ecr.us-east-1.amazonaws.com/devops:latest"       
 		   }	     
