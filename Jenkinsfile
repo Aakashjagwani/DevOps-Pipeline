@@ -35,9 +35,9 @@ pipeline {
 	   }
 	   stage('AWS Push'){
 		   steps{
-					docker.withRegistry('https://299857441992.dkr.ecr.us-east-1.amazonaws.com/devops', 'ecr:us-east-1:aws-credentials') {
-				    docker.image('aakash007/devops:latest').push('latest')
-					}          
+					sh "\$(aws ecr get-login)"
+ 	    			sh "docker tag aakash007/devops:latest 299857441992.dkr.ecr.us-east-1.amazonaws.com/devops:latest"
+    				sh "docker push 299857441992.dkr.ecr.us-east-1.amazonaws.com/devops:latest"       
 		   }	     
 	   }
 	}
